@@ -12,21 +12,16 @@ def index(request):
     portfolio = Portfolio.objects.all()
     category_all = Category.objects.all()
 
-    if request.method == 'POST':
-        form = CallForm(data=request.POST)
-        # if form.is_valid():
-        #     call = Call(client=request.POST.get("name"), phone=request.POST.get("phone"), date=timezone.now())
-        #     call.save()
-    else:
-        form = CallForm(data=request.POST)
-
+    if request.POST.get("contact"):
+        call = Call(client=request.POST.get("name"), phone=request.POST.get("phone"), date=timezone.now())
+        call.save()
 
     return render(request, 'index.html', context={'complex_all': complex_all,
                                                   'repair_all': repair_all,
                                                   'repair_main': repair_main,
                                                   'category_all': category_all,
                                                   'portfolio': portfolio,
-                                                  'form': form})
+                                                  })
 
 
 def managment(request):
