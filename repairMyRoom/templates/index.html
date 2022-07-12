@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+{% load static %}
+{% load i18n %}
+{% load index_tag %}
+
+{% block title %}
+  <title>Строй Рем Питер</title>
+
+{% endblock %}
+
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="{% static 'css/fav.ico' %}" />
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=476d7496-e32c-4a91-aa87-dcf99cf7102b &lang=ru_RU" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    <style>
+
+	.page--design::before{
+	    background-image:url({% static 'background/index.jpg' %});
+	    }
+
+
+    .page--sitemap{background-color:#f6f8fd}
+    .page--sitemap::before{content:none}
+
+
+  </style>
+
+
+
+</head>
+<body class="page page--design" >
+
+<!---------------------Header------------------------->
+<div class="header fixed-top " >
+  <div class="container">
+    <div class="row py-2  ">
+      <div class="col-xl-5 col-lg-5 col-md-7  text-center  " >
+        <a  href="{% url 'index' %}" >
+          <img class="w-100" style="" src="{% static 'css/stroyrempiter.png' %}" alt="Logo" >
+        </a>
+      </div>
+            <div class="col-md-5 d-none d-md-block d-lg-none text-center  ">
+                <a class="header-phone pt-2 d-block " style="line-height: 100%;" >+7-931-216-22-70</a>
+                <a class="header-phone d-block " style="line-height: 100%;" >+7-931-624-51-97</a>
+                <a class="header-phone d-block " style="line-height: 100%;" >+7-921-962-38-96</a>
+                <a class="header-phone d-block " style="line-height: 100%;" >+7-952-357-75-01</a>
+            </div>
+            <div class="col-sm-12 d-none d-sm-block d-md-none text-center  ">
+                <a class="header-phone pt-2  " style="line-height: 100%;" >+7-931-216-22-70</a>
+                <a class="header-phone  " style="line-height: 100%;" >+7-931-624-51-97</a>
+                <a class="header-phone  " style="line-height: 100%;" >+7-921-962-38-96</a>
+            </div>
+
+
+
+      <div class="col-xl-4 col-lg-3 col-md-7   text-center row mx-0 " style=" font-size: 120%;" >
+          <div class="d-none d-md-block d-lg-none col-12" style="height:5px;" ></div>
+          <div class="col-xl-12 d-none d-xl-block " style="height:50px;"></div>
+          <div class="col-xl-2 col-lg-12 col-md-2 d-none  d-md-block px-0">
+              <a class="  "  href="#price"  >ЦЕНЫ</a>
+          </div>
+          <div class="col-xl-6 col-lg-12 col-md-6 d-none d-md-block px-0">
+              <a class=""   href="#portfolio" >ПРИМЕРЫ РАБОТ</a>
+          </div>
+          <div class="col-xl-4 col-lg-12 col-md-4 d-sm-none d-md-block px-0">
+              <a  class=""  href="#contacts" >КОНТАКТЫ</a>
+          </div>
+
+      </div>
+      <div class="col-xl-3 col-lg-4 col-md-5 row mx-0 " >
+        <div class="col-8 px-0 d-none d-lg-block">
+            <a class="header-phone pt-2 d-block " style="line-height: 100%;" >+7-931-216-22-70</a>
+            <a class="header-phone d-block" style="line-height: 100%;" >+7-931-624-51-97</a>
+            <a class="header-phone d-block" style="line-height: 100%;" >+7-921-962-38-96</a>
+            <a class="header-phone d-block" style="line-height: 100%;" >+7-952-357-75-01</a>
+            <a class="header-phone d-block" style="line-height: 100%;" >+7-952-366-76-04</a>
+        </div>
+        <div class="col-lg-4 col-md-12 px-0  py-1  "  >
+          <button type="button" class="w-100 h-100 pt-1 call " data-toggle="modal"
+                  data-target="#CallModal"
+                  style=""  >
+            ОБРАТНЫЙ ЗВОНОК
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-----------------------------------------  call back----------------->
+<div>
+    <div class=" container">
+        <div class=" row justify-content-center">
+
+            <div class="col-9 index-box px-4 text-center">
+                <h1 class="index-title">РЕМОНТ КВАРТИР В Санкт-Петербург ПО ЦЕНЕ ОТ 3 190 РУБ./КВ.М.</h1>
+                <p class="index-subtitle">при заказе ремонта дизайн В ПОДАРОК</p>
+            </div>
+
+            <div class="col-9  text-center mt-2">
+                <div class="row " >
+                    <div class="col-3 px-0 "  >
+                        <img class="w-100" src="{% static 'css/sticker1.png' %}" style="" >
+                    </div>
+                    <div class="col-3 px-0 "  >
+                        <img class="w-100" src="{% static 'css/sticker2.png' %}" style="" >
+                    </div>
+                    <div class="col-3 px-0 "  >
+                        <img class="w-100" src="{% static 'css/sticker3.png' %}" style="" >
+                    </div>
+                    <div class="col-3 px-0 "  >
+                        <img class="w-100" src="{% static 'css/sticker4.png' %}" style="" >
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-9  text-center client-form ">
+
+                <h1 class="client-title">Пригласите <span style="font-weight: bold;" >  БЕСПЛАТНО </span>
+                    прораба-замерщика и он посчитает Вам смету прямо на объекте
+                    <span style="font-weight: bold;" >  за 30 мин!</span>
+                    </h1>
+                <form method="post"  >
+                        {% csrf_token %}
+                        <h4 class=" mt-3 user-field "    > Ваше имя </h4>
+                        <input class="user text-center " type="text" name="name"   >
+                        <div  class="align-center" >
+                            <input class="mt-1"  type="checkbox" name="polit"  checked>
+                            <a style="color:#777;"   >Согласие с политикой конфиденциальности </a>
+                        </div>
+                        <h4 class="text-center mt-2 user-field "> Ваш номер телефона </h4>
+                        <div class="align-center" >
+                            <a class="repair-text" >+7  </a>
+                            <input class="phone text-center" min="9000000000"  max="9999999999" type="number" name="phone">
+                        </div>
+                            {% if form.errors %}
+                                 <p class=""> iii </p>
+                            {% endif %}
+
+                        <input class="user-submit text-center py-1 "  type="submit" name="contact"  placeholder="Ваш номер телефона"
+                        style=" margin-top:16px;">
+                    </form>
+                <div id="price"></div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!---------------------------------- PRICE----------------------------------------->
+<div  style="margin-top:100px; background-color:#b1cac7; padding-bottom:50px;"  >
+    <div class="container  " >
+        <div class="row text-center" >
+           <h1 class="client-title mt-4 col-12" style="color:#00823C;">Цены на ремонтные услуги </h1>
+            <p class="index-subtitle col-12" style="color:#00823C; font-size: 150%; " >(стоимость ниже среднерыночной)</p>
+            <div class="col-lg-6 col-md-12  ">
+                <h1 class="client-title mt-4 col-12" style="color:#00823C;">Комплексные ремонты </h1>
+                <div class="repair px-2 pt-2" >
+                    <img class="w-90" src="{% static 'css/complex_repair.png' %}" >
+                    <h5 class="repair-text mt-2" >Цены на комплексные ремонты:</h5>
+                    {% for complex in complex_all %}
+                    <div class="row">
+                        <div class="col-9 pr-0"  >
+                            <div class="py-1" style=" background: #C81E00;" >
+                              <h5 class="complex-title mb-0" style="" >{{ complex.complex }}</h5>
+                            </div>
+
+                        </div>
+                        <div class="col-3 pl-0" >
+                            <div class="py-1" style=" background: #FFC832;"  >
+                                <h5 class="complex-price mb-0" > <span class="d-lg-none d-xl-inline" style="font-size: 80%;"> от </span>  {{ complex.price }} <span style="font-size: 80%;"> р/м2</span> </h5>
+                            </div>
+
+                        </div>
+                        <div class="col-12" >
+                            <p class="complex-text" >{{ complex.description }}</p>
+                        </div>
+
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+            <div class="col-lg-6 col-md-12 ">
+                <h1 class="client-title mt-4 col-12" style="color:#00823C;">Отдельные ремонтные работы </h1>
+                <div  class="repair px-2 pt-2">
+                    <img class="w-90" src="{% static 'css/repair.png' %}"  >
+                    <h5 class="repair-text mt-2" >Цены на ремонтные работы:</h5>
+                    {% for rep in repair_main %}
+                    <div class="row">
+                        <div class="col-9 pr-0"  >
+                            <div class="py-1" >
+                              <h5 class="complex-title mb-0" style="color: #00823C;" >{{ rep.repair }}</h5>
+                            </div>
+
+                        </div>
+                        <div class="col-3 pl-0" >
+                            <div class="py-1"   >
+                                <h5 class="complex-price mb-0" > <span style="font-size: 80%;"> от </span>  {{ rep.price }} <span style="font-size: 80%;"> р/{{rep.unit}}</span> </h5>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    {% endfor %}
+                    <button type="button" class="w-100 py-2 mb-3 fool-price " data-toggle="modal"
+                                  data-target="#PriceModal"
+                                  >
+                            ПОСМОТРЕТЬ ПОЛНЫЙ ПРАЙС
+                    </button>
+                    <div id="portfolio"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-------------------------------------------------  PORTFOLIO------------------->
+<div style=" background-color:#00823C; padding-bottom:50px;"  >
+    <div class="container " >
+        <div class="row text-center" >
+           <h1 class="client-title mt-4 col-12 mb-4" style="color: #e4e7ec;">Фото  выполненных работ </h1>
+            <div class="fotorama mx-auto col-10  "  data-transition="crossfade" data-autoplay="true"
+                 data-clicktransition="crossfade" data-nav="thumbs" style="  height: auto; width: 100%; " >
+                {% for im in portfolio %}
+                <img src=" /{{ im.picture }} " alt="Card image"  >
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-------------------------------------------------  Contacts------------------->
+<div style=" background-color:none; padding-bottom:50px;" id="contacts" >
+    <div class="container " >
+        <div class="row text-center justify-content-center"  >
+           <div class="col-10 index-box px-4 text-center" style=" margin-top:70px; " >
+                <h1 class="index-title">Контакты:</h1>
+
+                    <a style="font-size: 150%;">
+                        г. Санкт-Петербург, Муринская дорога, д. 57 <br>
+                        <img class="icon " src="{% static 'css/mail.svg' %}" alt="Phone">
+                      print-argo.msk@mail.ru
+                        <br>  <br>
+                      <img class="icon  " src="{% static 'css/phone.svg' %}" alt="Phone">
+                      Андрей +7-931-216-22-70 <br>
+                      <img class="icon" src="{% static 'css/phone.svg' %}" alt="Phone">
+                      Виталий +7-931-624-51-97 <br>
+                        <img class="icon" src="{% static 'css/phone.svg' %}" alt="Phone">
+                      Виталий +7-921-962-38-96 <br>
+                        <img class="icon" src="{% static 'css/phone.svg' %}" alt="Phone">
+                      Виктор +7-952-357-75-01 <br>
+                        <img class="icon" src="{% static 'css/phone.svg' %}" alt="Phone">
+                      Антон +7-952-366-76-04 <br>
+                        <img class="icon" src="{% static 'css/phone.svg' %}" alt="Phone">
+                      Григорий +7-996-770-69-31 <br>
+
+                    </a>
+                    <br>
+                    <div class="col-12  mt-4 " id="map" style=" height: 500px; border:5px solid #f99b37; padding:0px;"></div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    ymaps.ready(init);
+    function init(){
+    var myMap = new ymaps.Map("map", {
+       center: [60.033468, 30.457002],
+       zoom: 16
+       });
+    var myPlacemark = new ymaps.Placemark([60.033468, 30.457002]);
+       myMap.geoObjects.add(myPlacemark);
+       }
+</script>
+
+
+
+
+<div class="header py-4 " style="background: #00823C;" >
+  <div class="container">
+    <div class="row  ">
+      <div class="col-12  text-center pt-1 " >
+        <a  href="{% url 'index' %}" >
+          <img class="" style="height:80px;" src="{% static 'css/stroyrempiter.png' %}" alt="Logo" >
+        </a>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!------------------------------- Модальное окно price --------------------------------------->
+<div class="modal fade" id="PriceModal" tabindex="-1" aria-labelledby="PriceModalLabel"
+     aria-hidden="true"  >
+  <div class="modal-dialog" style="max-width:700px;" >
+    <div class="modal-content" style="background-color:#e4e7ec;">
+      <div class="modal-header">
+        <h5 class="modal-title complex-price" id="PriceModalLabel" style="font-size: 400%;" >Прайс-лист на услуги</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" style="color:#fd4539; font-size:200%;   ">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body row mx-1">
+        {% for cat in category_all %}
+
+          <div class="col-12 text-center" style="border:1px solid #fd4539;">
+              <a class="repair-text" style="font-size:150%; font-weight:bold;" >{{cat.category}}</a>
+          </div>
+
+          {% for rep in repair_all %}
+            {% if rep.recat == cat %}
+                <div class="col-2" style="border:1px solid #fd4539; font-size:120%; font-weight:bold; color: #365c37;"> {{rep.reside}} </div>
+                  <div class="col-7" style="border:1px solid #fd4539;">
+                      <a class="repair-text" style="font-size:120%; font-weight:bold; color: #365c37;"  > {{rep.repair}}</a>
+                  </div>
+                  <div class="col-3 text-center" style="border:1px solid #fd4539; font-size:120%; font-weight:bold; color: #365c37;"> {{rep.price}}  р/{{rep.unit}} </div>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="w-50 py-2 mb-3 " data-dismiss="modal"
+                style="background: #00823C; border: none;
+                font-family: FuturaRegular;
+                border-radius:16px; color: #FFC832; font-size: 150%; line-height: 100%;">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------- Модальное окно call --------------------------------------->
+<div class="modal fade" id="CallModal" tabindex="-1" aria-labelledby="CallModalLabel"
+     aria-hidden="true"  >
+  <div class="modal-dialog" style="max-width:700px;" >
+    <div class="modal-content" style="background-color:#e4e7ec;">
+         <form method="post"  >
+                        {% csrf_token %}
+              <div class="modal-body row mx-1 text-center justify-content-md">
+                        <h4 class=" mt-3 user-field col-11 "    > Ваше имя </h4>
+                            <button type="button" class="close col-1" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true" style="color:#fd4539; font-size:200%;   ">&times;</span>
+                            </button>
+                        <div class="col-12 text-center">
+                            <input class="user   " type="text" name="name">
+                        </div>
+
+                        <div  class="align-center col-12" >
+                            <input class="mt-1"  type="checkbox" name="polit"  checked>
+                            <a style="color:#777;"   >Согласие с политикой конфиденциальности </a>
+                        </div>
+                        <h4 class="text-center mt-2 user-field col-12 "> Ваш номер телефона </h4>
+                        <div class="align-center col-12" >
+                            <a class="repair-text">+7  </a>
+                            <input class="phone   " min="9000000000"  max="9999999999" type="number" name="phone"
+                            >
+                        </div>
+                        <div class="col-12">
+                            <input class="user-submit text-center py-1  align-self-center"  type="submit" name="contact"
+                                   style=" margin-top:16px; width: 70%; ">
+                        </div>
+
+
+              </div>
+             </form>
+      <div class="modal-footer justify-content-center ">
+        <button type="button" class=" w-50  py-2 mb-3 " data-dismiss="modal"
+                style="background: #00823C; border: none;
+                font-family: FuturaRegular;
+                border-radius:16px; color: #FFC832; font-size: 150%; line-height: 100%;" >Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% block content %}  {% endblock %}
+
+
+
+
+
+
+
+</body>
+</html>
